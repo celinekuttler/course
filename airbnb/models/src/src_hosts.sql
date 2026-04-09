@@ -4,7 +4,7 @@ WITH raw_hosts AS (
 SELECT
     id AS host_id,
     name AS host_name,
-    host_is_superhost,
-    created_at AS host_created_date,
-    updated_at AS host_updated_date
+    is_superhost,
+    created_at ,
+    updated_at 
 FROM raw_hosts
