@@ -1,9 +1,13 @@
-WITH src_listings AS(
-    SELECT * FROM {{ ref('src_listings') }}
-)
+{{
+    config(
+        materialized='view'
+    )}}
+WITH src_listing AS (
+            SELECT * FROM {{ ref('src_listings') }}
+        )
 SELECT 
 listing_id,
-listing_name
+listing_name,
 room_type,
 CASE
     WHEN minimum_nights = 0 THEN 1
