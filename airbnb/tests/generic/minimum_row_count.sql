@@ -5,4 +5,4 @@ FROM
 {{ model }}
 HAVING
 COUNT(*) < {{ min_row_count }}
-{% endtest %}
+{% endtest %} 
