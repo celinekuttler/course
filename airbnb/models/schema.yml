@@ -36,19 +36,26 @@ models:
     columns:
       - name: host_id
         description: primary key of host table
+        data_type: integer
         data_tests:
           - unique 
           - not_null
       - name: host_name 
-        description: name of a host 
+        description: name of a host
+        data_type: string 
         data_tests:
           - not_null
       - name: is_superhost
         description: indicates superhosts (true or false, indicated by 't' or 'f')
+        data_type: string
         data_tests:
           - accepted_values:
               arguments:
                 values: ['t','f']
+      - name: updated_at
+        data_type: timestamp
+      - name: created_at
+        data_type: timestamp
 
   - name: fct_reviews
     columns:
